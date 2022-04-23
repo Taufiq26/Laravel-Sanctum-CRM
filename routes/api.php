@@ -39,4 +39,10 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/or_transaction', [App\Http\Controllers\API\OnlineRetailTransactionController::class, 'store']);
     Route::put('/or_transaction', [App\Http\Controllers\API\OnlineRetailTransactionController::class, 'update']);
     Route::delete('/or_transaction/{inv_code}', [App\Http\Controllers\API\OnlineRetailTransactionController::class, 'destroy']);
+
+    // Program (Kebutuhan UTS)
+    Route::get('/program', [App\Http\Controllers\API\ProgramsController::class, 'getAll']);
+    Route::post('/program', [App\Http\Controllers\API\ProgramsController::class, 'store']);
+    Route::put('/program/{id}', [App\Http\Controllers\API\ProgramsController::class, 'update']);
+    Route::delete('/program/{id}', [App\Http\Controllers\API\ProgramsController::class, 'destroy']);
 });
